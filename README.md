@@ -1,5 +1,5 @@
 # Introduction
-My answer to the Frontend Mentor "NFT card preview" challenge
+My answer to the Frontend Mentor "Base Apparel Coming Soon" challenge
 I used BenjaminCode parcel quickstarter project as a boilerplate : https://github.com/bdebon/quick-parcel-project
 
 
