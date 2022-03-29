@@ -3,16 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name="viewport" content="width=device-width" />
     <title>Base apparel coming soon</title>
     <link rel="stylesheet" type="text/css" href="src/styles.scss" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="icon"
-      href="./assets/favicon-32x32.png"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="./assets/favicon-32x32.png" type="image/x-icon" />
 
     <link
       rel="stylesheet"
@@ -28,37 +26,37 @@
             <img src="./assets/logo.svg" alt="base_apparel_logo" />
           </header>
           <main>
-          <section class="comingsoon_content">
-            <h1>We're <span class="title_emphasis">coming soon</span></h1>
-            <p>
-              Hello fellow shoppers! We're currently building our new fashion
-              store. Add your email below to stay up-to-date with annoucements
-              and our launch deals.
-            </p>
-          </section>
+            <section class="comingsoon_content">
+              <h1>We're <span class="title_emphasis">coming soon</span></h1>
+              <p>
+                Hello fellow shoppers! We're currently building our new fashion
+                store. Add your email below to stay up-to-date with annoucements
+                and our launch deals.
+              </p>
+            </section>
 
-          <div class="email_form">
-            <form novalidate action="#" name="form1" id="form">
-              <input
-                class=""
-                type="email"
-                name="email1"
-                id="email1"
-                placeholder="Email Address"
-                value=""
+            <div class="email_form">
+              <form novalidate action="#" name="form1" id="form">
+                <input
+                  class=""
+                  type="email"
+                  name="email1"
+                  id="email1"
+                  placeholder="Email Address"
+                  value=""
+                />
+                <button onclick="ValidateEmail(document.form1.email1)">
+                  <img src="./assets/icon-arrow.svg" alt="send_button_icon" />
+                </button>
+              </form>
+              <p class="email_error_message">Please provide a valid email</p>
+              <img
+                class="error_icon"
+                src="./assets/icon-error.svg"
+                alt="error_icon"
               />
-              <button onclick="ValidateEmail(document.form1.email1)">
-                <img src="./assets/icon-arrow.svg" alt="send_button_icon" />
-              </button>
-            </form>
-            <p class="email_error_message">Please provide a valid email</p>
-            <img
-              class="error_icon"
-              src="./assets/icon-error.svg"
-              alt="error_icon"
-            />
-          </div>
-        </main>
+            </div>
+          </main>
         </div>
       </div>
 
