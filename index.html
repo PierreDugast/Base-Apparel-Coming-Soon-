@@ -76,7 +76,7 @@
 
       window.ValidateEmail = function ValidateEmail(InputText) {
         var emailRegExp =
-          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+          /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
         const emailform = document.getElementById("email1");
         const error_icon = document.getElementsByClassName("error_icon")[0];
