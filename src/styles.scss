@@ -9,19 +9,20 @@ body {
 
 .global_container {
   display: flex;
+  margin: 0px auto;
 
   @media screen and (min-width: $breakpoint-phone) {
     width: 375px;
     height: 800px;
 
-    margin: 0px auto;
+    
   }
 
   @media screen and (min-width: $breakpoint-computer) {
     width: 1440px;
     height: 800px;
 
-    margin: 80px auto;
+    
 
     align-items: center;
     justify-content: center;
