@@ -21,7 +21,6 @@
   </head>
 
   <body>
-
     <div class="global_container">
       <div class="content_container">
         <div class="content">
@@ -39,12 +38,25 @@
           </section>
 
           <div class="email_form">
-            <form action="">
-              <input type="email" name="" id="" placeholder="Email Address"/>
-              <button><img src="./assets/icon-arrow.svg" alt="send_button_icon" > </button>
+            <form novalidate action="" name="form1" id="form">
+              <input
+                class=""
+                type="email"
+                name="email1"
+                id="email1"
+                placeholder="Email Address"
+                value=""
+              />
+              <button onclick="ValidateEmail(document.form1.email1)">
+                <img src="./assets/icon-arrow.svg" alt="send_button_icon" />
+              </button>
             </form>
             <p class="email_error_message">Please provide a valid email</p>
-            <img class="error_icon" src="./assets/icon-error.svg" alt="error_icon">
+            <img
+              class="error_icon"
+              src="./assets/icon-error.svg"
+              alt="error_icon"
+            />
           </div>
         </div>
       </div>
@@ -54,5 +66,40 @@
 
 
     <script type="module" src="src/index.ts"></script>
+    <script>
+      // Prevent page reload on form submition
+      var form = document.getElementById("form");
+      function handleForm(event) {
+        event.preventDefault();
+      }
+      form.addEventListener("submit", handleForm);
+
+      function ValidateEmail(InputText) {
+        var emailRegExp =
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+          
+        const emailform = document.getElementById("email1");
+        const error_icon = document.getElementsByClassName("error_icon")[0];
+        const email_error_message = document.getElementsByClassName(
+          "email_error_message"
+        )[0];
+
+        if (InputText.value.match(emailRegExp)) {
+          // style
+          emailform.classList.remove("error_form");
+          error_icon.style.visibility = "hidden";
+          email_error_message.style.visibility = "hidden";
+
+          return true;
+        } else {
+          // style
+          emailform.classList.add("error_form");
+          error_icon.style.visibility = "visible";
+          email_error_message.style.visibility = "visible";
+
+          return false;
+        }
+      }
+    </script>
   </body>
 </html>

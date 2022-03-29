@@ -1,54 +1,64 @@
 @import "scss/reset";
-@import "scss/base";
 @import "scss/variables";
 
 body {
   font-size: 16px;
   font-family: "Josefin Sans";
-  width: 100%;
-  height: 100%;
-  background-color: rgb(194, 194, 194);
+  background-color: rgba(241, 222, 226, 0.719);
 }
 
 .global_container {
-
+  display: flex;
 
   @media screen and (min-width: $breakpoint-phone) {
     width: 375px;
-  }
+    height: 800px;
 
-  @media screen and (min-width: $breakpoint-tablet) {
-    width: 768px;
+    margin: 0px auto;
   }
 
   @media screen and (min-width: $breakpoint-computer) {
     width: 1440px;
+    height: 800px;
+
+    margin: 80px auto;
+
+    align-items: center;
+    justify-content: center;
   }
-
-  height: 800px;
-
-  margin: 80px auto;
-
-  background-color: aqua;
-
-  align-items: center;
-  display: flex;
-  justify-content: center;
 
   .content_container {
     background: $gradient1;
     background: url(../assets/bg-pattern-desktop.svg), $gradient1;
 
-    width: 830px;
+    @media screen and (min-width: $breakpoint-computer) {
+      width: 830px;
+    }
 
     .content {
-      margin: 65px 220px 160px 150px;
-      width: 445px;
-      height: 575px;
+      @media screen and (min-width: $breakpoint-phone) {
+        width: 311px;
+
+        margin: 32px;
+      }
+
+      @media screen and (min-width: $breakpoint-computer) {
+        width: 445px;
+        height: 575px;
+
+        margin: 65px 220px 160px 150px;
+      }
 
       header {
-        width: 160px;
-        height: 33px;
+        @media screen and (min-width: $breakpoint-phone) {
+          width: 100px;
+          height: auto;
+        }
+
+        @media screen and (min-width: $breakpoint-computer) {
+          width: 160px;
+          height: auto;
+        }
       }
 
       .comingsoon_content {
@@ -56,11 +66,8 @@ body {
 
         h1 {
           word-spacing: 100px;
-          font-size: 48px;
           text-transform: uppercase;
           letter-spacing: 0.3em;
-          margin-top: 140px;
-
           font-weight: 300;
 
           .title_emphasis {
@@ -70,75 +77,162 @@ body {
         }
 
         p {
-          width: 425px;
-          margin-top: 30px;
-          margin-bottom: 48px;
-          font-size: 13px;
-          line-height: 20px;
+          line-height: 27px;
+        }
+
+        @media screen and (min-width: $breakpoint-phone) {
+          h1 {
+            
+            margin-top: 340px;
+
+            font-size: 38px;
+            line-height: 105%;
+            text-align: center;
+
+            .title_emphasis {
+              color: $dark_grayish_red;
+              font-weight: 600;
+            }
+          }
+
+          p {
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 44px;
+
+            font-size: 14px;
+            text-align: center;
+          }
+        }
+
+        @media screen and (min-width: $breakpoint-computer) {
+          h1 {
+            
+            margin-top: 140px;
+
+            font-size: 64px;
+            line-height: 105%;
+            text-align: left;
+          }
+
+          p {
+            width: 430px;
+            margin-top: 20px;
+            margin-bottom: 44px;
+            font-size: 16px;
+            text-align: left;
+          }
         }
       }
 
       .email_form {
-
         position: relative;
-        
-        input {
-          
-          width: 446px;
-          height: 60px;
-          border: 0.5px solid $desaturated_red;
-          border-radius: 30px;
 
-          padding-left:33px
+        .error_form {
+          border: 2px solid $soft_red;
+        }
+
+        input {
+
+
+          @media screen and (min-width: $breakpoint-phone) {
+            width: 311px;
+            height: 48px;
+            padding-left: 24px;
+            border-radius: 28px;
+            margin-bottom: 10px;
+          }
+
+          @media screen and (min-width: $breakpoint-computer) {
+            width: 446px;
+            height: 56px;
+            padding-left: 33px;
+            border-radius: 28px;
+          }
+          border: 0.5px solid $desaturated_red;
         }
 
         button {
-          height: 60px;
-          width: 100px;
+          @media screen and (min-width: $breakpoint-phone) {
+            height: 48px;
+            width: 62px;
+          }
+
+          @media screen and (min-width: $breakpoint-computer) {
+            height: 56px;
+            width: 100px;
+          }
+
           position: absolute;
-          background-color: aqua;
           top: 0px;
-          right: 0;
-          border-radius: 30px;
-          
+          right: -1px;
+          border-radius: 28px;
+
           background: $gradient2;
           box-shadow: rgba(253, 140, 140, 0.356) 0px 25px 20px -13px;
-  
 
-          img{
+          img {
             width: auto;
             height: 20px;
             margin: 0 auto;
           }
+
+          &:hover {
+            filter: brightness(120%);
+            box-shadow: rgba(199, 106, 106, 0.356) 0px 20px 16px -5px;
+          }
         }
         ::placeholder {
-          
           color: $desaturated_red;
         }
 
-
-
         .email_error_message {
-          color : $soft_red;
-          padding-left: 33px;
-          margin-top: 10px;
-          
+          @media screen and (min-width: $breakpoint-phone) {
+            font-size: 14px;
+            padding-left: 24px;
+            margin-top: 0px;
+          }
+          @media screen and (min-width: $breakpoint-computer) {
+            padding-left: 33px;
+            margin-top: 10px;
+          }
+          visibility: hidden;
+          color: $soft_red;
         }
 
         .error_icon {
+          visibility: hidden;
           height: 24px;
           width: auto;
           position: absolute;
-          top: 18px;
-          right:116px;
+
+          @media screen and (min-width: $breakpoint-phone) {
+            top: 12px;
+            right: 80px;
+          }
+          @media screen and (min-width: $breakpoint-computer) {
+            top: 18px;
+            right: 116px;
+          }
         }
       }
     }
   }
 
   .hero_image {
-    width: 610px;
-    height: 100%;
-    background-image: url(../assets/hero-desktop.jpg);
+    @media screen and (min-width: $breakpoint-phone) {
+      position: absolute;
+      top: 84px;
+      width: 375px;
+      height: 250px;
+      background-image: url(../assets/hero-mobile.jpg);
+    }
+
+    @media screen and (min-width: $breakpoint-computer) {
+      position: sticky;
+      width: 610px;
+      height: 800px;
+      background-image: url(../assets/hero-desktop.jpg);
+    }
   }
 }
